@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Crispy Kitchen Menu</title>
+{% endblock %}
+
+{% block content %}
+        <main>
+
+            <header class="site-header site-menu-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <h1 class="text-white">Our Menus</h1>
+
+                            <strong class="text-white">Perfect for all Breakfast, Lunch and Dinner</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="overlay"></div>
+            </header>
+
+            <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-lg-5 mb-4">Breakfast Menu</h2>
+                        </div>
+                        {% for menu in menus %}
+                            {% if menu.type_of_meal == 'Breakfast' %}
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt="img"></a>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">{{ menu.name_of_the_food }}</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{ menu.price }}</span>
+
+                                    <del class="ms-4"><small>$</small>{{ menu.price|add:'10' }}</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">32 Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu section-padding bg-white">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-lg-5 mb-4">Lunch Menu</h2>
+                        </div>
+                        {% for menu in menus %}
+                            {% if menu.type_of_meal == 'Lunch' %}
+                        <div class="col-lg-6 col-12">
+                            <div class="menu-thumb">
+                                <a href="{% url 'menu detail' pk=menu.pk %}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt=""></a>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <a href="{% url 'menu detail' pk=menu.pk %}"><h4 class="mb-0">{{ menu.name_of_the_food }}</h4></a>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{ menu.price|floatformat:2 }}</span>
+
+                                    <del class="ms-4"><small>$</small>55</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4.2/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">66 Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-lg-5 mb-4">Dinner Menu</h2>
+                        </div>
+                        {% for menu in menus %}
+                          {% if menu.type_of_meal == 'Dinner' %}
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt=""></a>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <a href="{% url 'menu detail' pk=menu.pk%}"><h4 class="mb-0">{{ menu.name_of_the_food }}</h4></a>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{ menu.price|floatformat:2 }}</span>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4.4/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">102 Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock %}
+

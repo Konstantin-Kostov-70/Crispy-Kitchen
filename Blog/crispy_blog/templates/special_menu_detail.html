@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Menu Detail</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h5 style="text-align: center; margin-top: 20px">Special Menu</h5>
+        <section class="contact section-padding">
+            <div class="container">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h2>{{ object.name_of_the_food }}</h2>
+                    <img  src="/media/{{ object.photo }}" alt="img">
+                    <span style="position: relative; left: 230px; top: 20px" class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{ object.price|floatformat:2 }}</span>
+                </div>
+                <div style="position: relative; left: 750px; bottom: 490px; width: 370px;">
+                    <p style="font-size: x-large">{{ object.description }}</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Crispy Kitchen - Sign-in</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+
+
+            <link href="{% static 'css/login_form.css' %}" rel="stylesheet">
+            <div class="contain">
+
+                <div class="brand-logo">
+                    <img src="/media/download_images/pic-removebg-preview.png">
+                </div>
+                <div class="inputs">
+                    <form method="post" action="{% url 'sign in' %}">
+                    <label>USERNAME</label>
+                        {{ form.username }}
+{#                    <input type="email" placeholder="example@test.com"/>#}
+                    <label>PASSWORD</label>
+                    {{ form.password }}
+{#                    <input type="password" placeholder="Min 6 charaters long"/>#}
+                        {% csrf_token %}
+                    <button type="submit">LOGIN</button>
+                    <br>
+                    <a  href="{% url 'sign up' %}"><p class="parag" style="color: black; ">Register<p/></a>
+                     </form>
+                </div>
+
+            </div>
+
+
+            {#                    <form class="custom-form contact-form row" action="#" method="post" role="form">#}
+            {#                        {{ form }}#}
+            {#                        {% csrf_token %}#}
+            {#                        <div class="col-lg-6 col-6">#}
+            {#                            <label for="contact-name" class="form-label">Full Name</label>#}
+            {##}
+            {#                            <input type="text" name="contact-name" id="contact-name" class="form-control"#}
+            {#                                   placeholder="Your Name" required>#}
+            {#                        </div>#}
+            {##}
+            {#                        <div class="col-lg-6 col-6">#}
+            {#                            <label for="contact-phone" class="form-label">Phone Number</label>#}
+            {##}
+            {#                            <input type="telephone" name="contact-phone" id="contact-phone"#}
+            {#                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">#}
+            {#                        </div>#}
+            {##}
+            {#                        <div class="col-12">#}
+            {#                            <label for="contact-email" class="form-label">Email</label>#}
+            {##}
+            {#                            <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*"#}
+            {#                                   class="form-control" placeholder="Your Email" required="">#}
+            {##}
+            {#                            <label for="contact-message" class="form-label">Message</label>#}
+            {##}
+            {#                            <textarea class="form-control" rows="5" id="contact-message" name="contact-message"#}
+            {#                                      placeholder="Your Message"></textarea>#}
+            {#                        </div>#}
+            {##}
+            {#                        <div style="margin-top: 10px" class="col-lg-5 col-12 ms-auto">#}
+            {#                            <button type="submit" class="form-control">Send</button>#}
+            {#                        </div>#}
+            {#                    </form>#}
+            {#                </div>#}
+
+            {#                <div class="col-lg-4 col-12 mx-auto mt-lg-5 mt-4">#}
+            {##}
+            {#                    <h5>Weekdays</h5>#}
+            {##}
+            {#                    <div class="d-flex mb-lg-3">#}
+            {#                        <p>Monday to Friday</p>#}
+            {##}
+            {#                        <p class="ms-5">10:00 AM - 08:00 PM</p>#}
+            {#                    </div>#}
+            {##}
+            {#                    <h5>Weekends</h5>#}
+            {##}
+            {#                    <div class="d-flex">#}
+            {#                        <p>Saturday and Sunday</p>#}
+            {##}
+            {#                        <p class="ms-5">11:00 AM - 11:00 PM</p>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                </div>#}
+            {#            </div>#}
+            {#        </section>#}
+
+    </main>
+{% endblock %}
+

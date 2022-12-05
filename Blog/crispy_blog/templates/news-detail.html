@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Blog-news</title>
+{% endblock %}
+
+{% block content %}
+
+
+        <main>
+
+            <header class="site-header site-news-detail-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2>Learning a fine dining experience</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <section class="news-detail section-padding pt-0">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <img src="{% static 'images/news/news-detail-header.jpg' %}" class="img-fluid news-detail-image" alt="fine dining experience">
+
+                            <div class="col-lg-10 col-10 mx-auto mt-5">
+                                
+                                <h4 class="mb-3">The best fine-dining experience at Crispy Kitchen</h4>
+
+                                <p>Listen, you work hard. When you come home
+                                    from a tiring day, planning and cooking a
+                                    meal can seem daunting. But, it doesn’t have to be!
+                                    By learning essential cooking skills you can lower
+                                    your food bills, eat more nutritiously,
+                                    and turn cooking into a fun experience.
+                                    So, join us, as we go with skills and ideas
+                                    that will help you learn to cook like a chef.</p>
+
+
+                                <div class="ratio ratio-16x9 my-5">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ object.you_tube_code }}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+
+                                <h5 class="mt-4 mb-3">Тry it Yourself, Surprise Everyone !</h5>
+
+                                <p> Cooking your own food also helps you save money, bring more balance into your life, and build stronger bonds with family members whom you share your meals with.</p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="comments section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="text-center mb-4">Comment Box</h4>
+                        </div>
+
+                        <div class="col-lg-7 col-12 mx-auto">
+                            {% if user.is_authenticated %}
+                            <form class="custom-form comment-form" method="post" action="{% url 'news detail' pk=post.pk%}"  role="form" >
+                            {% else %}
+                            <form class="custom-form comment-form" method="post" action="{% url 'sign in' %}"  role="form" >
+                            {% endif %}
+                                 {{ form }}
+                                {% csrf_token %}
+
+                                <div class="col-lg-3 col-4 mx-auto">
+                                    <button type="submit" class="form-control" id="subscribe">Submit</button>
+                                </div>
+                            </form>
+
+                            {% for comment in comments %}
+                                {% if comment.post.pk == post.pk %}
+                            <div class="news-author d-flex flex-wrap align-items-center">
+                                <img src="/media/{{ comment.user.photo }}" class="img-fluid news-author-image" alt="">
+
+                                <div class="ms-4 w-50">
+                                    <p class="mb-2">{{ comment.comment_text }}</p>
+                                    
+                                    <a href="#">{{ comment.user.username }}</a>
+                                </div>
+
+                                <span class="ms-auto">{{ comment.date_and_time_of_publication }}</span>
+                            </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+{% endblock %}

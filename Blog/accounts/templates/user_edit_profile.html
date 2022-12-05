@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Profile - Edit</title>
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section class="contact section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="mb-4">Edit Profile</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <form class="custom-form contact-form row" action="{% url 'profile edit' pk=request.user.pk%}" method="post"
+                              enctype="multipart/form-data">
+                            <div class="col-12">
+                                <label for="contact-email" class="form-label">Username</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="col-12">
+                                <label for="contact-email" class="form-label">Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">Password</label>
+                                {{ form.password1 }}
+                            </div>
+
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">Confirm Passoword</label>
+                                {{ form.password2 }}
+                            </div>
+
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">First Name</label>
+                                {{ form.first_name }}
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">Last Name</label>
+                                {{ form.last_name }}
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">Date of Birth</label>
+                                {{ form.date_of_birth }}
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <label for="contact-email" class="form-label">Photo</label>
+                                {{ form.photo }}
+                            </div>
+                            <div class="col-12">
+                                <label for="contact-email" class="form-label">Phone</label>
+                                {{ form.phone }}
+                            </div>
+                            <div class="col-12">
+                                <label for="contact-email" class="form-label">Profession</label>
+                                {{ form.profession }}
+                            </div>
+                            {% csrf_token %}
+                            <div class="col-lg-5 col-12 ms-auto">
+                                <button type="submit" class="form-control">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-4 col-12 mx-auto mt-lg-5 mt-4">
+
+                        <h5>Weekdays</h5>
+
+                        <div class="d-flex mb-lg-3">
+                            <p>Monday to Friday</p>
+
+                            <p class="ms-5">10:00 AM - 08:00 PM</p>
+                        </div>
+
+                        <h5>Weekends</h5>
+
+                        <div class="d-flex">
+                            <p>Saturday and Sunday</p>
+
+                            <p class="ms-5">11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}
