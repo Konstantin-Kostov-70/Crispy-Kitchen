@@ -39,7 +39,7 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
         required=False,
         widget=forms.ClearableFileInput(
             attrs={'class': 'form-control',
-                   'placeholder': 'Chose file'}),
+                   'placeholder': '(optional)'}),
     )
 
     class Meta:
@@ -59,14 +59,14 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
             'first_name': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "Your First Name",
+                    'placeholder': "(optional)",
                 }
             ),
 
             'last_name': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "Your Last Name",
+                    'placeholder': "(optional)",
                 }
             ),
 
@@ -80,21 +80,21 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
             'date_of_birth': forms.DateInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "10/10/2010",
+                    'placeholder': "(optional)",
                 }
             ),
 
             'phone': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "123-456-7890",
+                    'placeholder': "(optional)",
                 }
             ),
 
             'profession': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "Your Profession",
+                    'placeholder': "(optional)",
                 }
             ),
         }
