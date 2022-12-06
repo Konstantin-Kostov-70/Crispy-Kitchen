@@ -1,2 +1,2 @@
-hello  this  is change from Python Framework after delete master
+Delete the new branch master
 
