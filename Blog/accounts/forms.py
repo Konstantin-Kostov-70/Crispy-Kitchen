@@ -17,6 +17,7 @@ class ProfileLoginForm(auth_forms.AuthenticationForm):
 
 class ProfileCreateForm(auth_forms.UserCreationForm):
 
+
     password1 = forms.CharField(
         label="Password",
         widget=forms.PasswordInput(
@@ -32,7 +33,7 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
             attrs={'class': 'form-control',
                    'type': 'password',
                    'align': 'center',
-                   'placeholder': 'Enter the same password'}),
+                   'placeholder': 'lest one upper Wp6lkN70'}),
     )
 
     photo = forms.ImageField(

@@ -23,15 +23,16 @@
                                 <label for="contact-email" class="form-label">Username</label>
                                 {{ form.username }}
                             </div>
+                            {{ form.errors }}
                             <div class="col-12">
                                 <label for="contact-email" class="form-label">Email</label>
                                 {{ form.email }}
                             </div>
+
                             <div class="col-lg-6 col-6">
                                 <label for="contact-email" class="form-label">Password</label>
                                 {{ form.password1 }}
                             </div>
-
                             <div class="col-lg-6 col-6">
                                 <label for="contact-email" class="form-label">Confirm Passoword</label>
                                 {{ form.password2 }}
