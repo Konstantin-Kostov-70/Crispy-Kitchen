@@ -36,6 +36,7 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
     )
 
     photo = forms.ImageField(
+        required=False,
         widget=forms.ClearableFileInput(
             attrs={'class': 'form-control',
                    'placeholder': 'Chose file'}),

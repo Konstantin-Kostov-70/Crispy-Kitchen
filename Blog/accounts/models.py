@@ -38,5 +38,6 @@ class UserProfile(auth_models.AbstractUser):
     photo = models.ImageField(
         upload_to='download_images',
         null=True,
-        blank=True
+        blank=True,
+
     )
