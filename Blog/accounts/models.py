@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import models as auth_models
+from cloudinary.models import CloudinaryField
 
 
 class UserProfile(auth_models.AbstractUser):
@@ -35,9 +36,4 @@ class UserProfile(auth_models.AbstractUser):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-    photo = models.ImageField(
-        upload_to='download_images',
-        null=True,
-        blank=True,
-
-    )
+    photo = CloudinaryField('image')

@@ -35,7 +35,7 @@
                             {% if menu.type_of_meal == 'Breakfast' %}
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
-                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt="img"></a>
+                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="{{ menu.photo.url }}" class="img-fluid menu-image" alt="img"></a>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
                                     <h4 class="mb-0">{{ menu.name_of_the_food }}</h4>
@@ -78,7 +78,7 @@
                             {% if menu.type_of_meal == 'Lunch' %}
                         <div class="col-lg-6 col-12">
                             <div class="menu-thumb">
-                                <a href="{% url 'menu detail' pk=menu.pk %}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt=""></a>
+                                <a href="{% url 'menu detail' pk=menu.pk %}"><img src="{{ menu.photo.url }}" class="img-fluid menu-image" alt=""></a>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
                                     <a href="{% url 'menu detail' pk=menu.pk %}"><h4 class="mb-0">{{ menu.name_of_the_food }}</h4></a>
@@ -120,7 +120,7 @@
                           {% if menu.type_of_meal == 'Dinner' %}
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
-                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="/media/{{ menu.photo }}" class="img-fluid menu-image" alt=""></a>
+                                <a href="{% url 'menu detail' pk=menu.pk%}"><img src="{{ menu.photo.url }}" class="img-fluid menu-image" alt=""></a>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
                                     <a href="{% url 'menu detail' pk=menu.pk%}"><h4 class="mb-0">{{ menu.name_of_the_food }}</h4></a>

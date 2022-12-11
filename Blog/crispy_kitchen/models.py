@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 from Blog.crispy_blog.models import Post
+from cloudinary.models import CloudinaryField
 
 UserModel = get_user_model()
 
@@ -67,9 +68,7 @@ class Menu(models.Model):
 
     price = models.FloatField()
 
-    photo = models.ImageField(
-        upload_to='food_images'
-    )
+    photo = CloudinaryField('image')
 
     description = models.TextField()
 
@@ -95,9 +94,7 @@ class SpecialMenu(models.Model):
 
     price = models.FloatField()
 
-    photo = models.ImageField(
-        upload_to='food_images'
-    )
+    photo = CloudinaryField('image')
 
     description = models.TextField()
 

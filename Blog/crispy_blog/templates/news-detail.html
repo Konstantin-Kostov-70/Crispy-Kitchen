@@ -84,7 +84,7 @@
                             {% for comment in comments %}
                                 {% if comment.post.pk == post.pk %}
                             <div class="news-author d-flex flex-wrap align-items-center">
-                                <img src="/media/{{ comment.user.photo }}" class="img-fluid news-author-image" alt="">
+                                <img src="{{ comment.user.photo.url }}" class="img-fluid news-author-image" alt="">
 
                                 <div class="ms-4 w-50">
                                     <p class="mb-2">{{ comment.comment_text }}</p>

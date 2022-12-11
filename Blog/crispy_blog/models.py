@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 UserModel = get_user_model()
 
@@ -31,9 +32,7 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-    photo = models.ImageField(
-        upload_to='blog_images',
-    )
+    photo = CloudinaryField('image')
 
     you_tube_code = models.CharField(
         max_length=20
