@@ -8,7 +8,7 @@ UserModel = get_user_model()
 class UserCreationForm2(UserCreationForm):
     class Meta:
         model = UserModel
-        fields = ("username", "first_name")
+        fields = ("username",)
 
 
 @admin.register(UserModel)
