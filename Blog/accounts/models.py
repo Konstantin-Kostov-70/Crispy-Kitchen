@@ -36,8 +36,6 @@ class UserProfile(auth_models.AbstractUser):
 
     profession = models.CharField(
         max_length=30,
-        null=True,
-        blank=True,
     )
 
     def __str__(self):
