@@ -20,8 +20,6 @@ class UserProfile(auth_models.AbstractUser):
 
     date_of_birth = models.DateField(
         null=True,
-        blank=True,
-
     )
 
     email = models.EmailField(
