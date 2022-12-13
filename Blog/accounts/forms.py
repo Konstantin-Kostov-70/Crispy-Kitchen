@@ -37,10 +37,9 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
     )
 
     photo = forms.ImageField(
-        required=False,
         widget=forms.ClearableFileInput(
             attrs={'class': 'form-control',
-                   'placeholder': '(optional)'}),
+                   'placeholder': ''}),
     )
 
     class Meta:
@@ -60,14 +59,14 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
             'first_name': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "(optional)",
+                    'placeholder': "Your first name",
                 }
             ),
 
             'last_name': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "(optional)",
+                    'placeholder': "Your last name",
                 }
             ),
 
@@ -81,21 +80,21 @@ class ProfileCreateForm(auth_forms.UserCreationForm):
             'date_of_birth': forms.DateInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "(optional)",
+                    'placeholder': "mm/dd/yyyy",
                 }
             ),
 
             'phone': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "(optional)",
+                    'placeholder': "Your phone",
                 }
             ),
 
             'profession': forms.TextInput(
                 attrs={
                     'class': "form-control",
-                    'placeholder': "(optional)",
+                    'placeholder': "Your profession",
                 }
             ),
         }
