@@ -15,7 +15,7 @@
 
                            <form method="post" action="{% url 'profile delete' pk=request.user.pk %}">
                                {% csrf_token %}
-                               <button type="button" class="btn btn-danger">! YES !</button>
+                               <button type="submit" class="btn btn-danger">! YES !</button>
                                <div style="margin-top: 15px">
                             <a class="btn btn-danger" href="javascript:history.back()">Go Back</a>
                             </div>
