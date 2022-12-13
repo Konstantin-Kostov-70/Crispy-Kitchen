@@ -10,6 +10,14 @@ class UserProfile(auth_models.AbstractUser):
         unique=True
     )
 
+    first_name = models.CharField(
+        max_length=50,
+    )
+
+    last_name = models.CharField(
+        max_length=50,
+    )
+
     date_of_birth = models.DateField(
         null=True,
         blank=True,
