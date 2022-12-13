@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="db" uuid="b04a2823-ec68-4435-bfa9-0bc9fd12ba0c">
+    <data-source source="LOCAL" name="db [2]" uuid="a77c93a6-928e-4017-89b0-d06a4d19df6e">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\CrispyDeploy\Crispy-Kitchen\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\crispy-last\Crispy-Kitchen\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
