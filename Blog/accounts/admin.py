@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth import admin as auth_admin, get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
 
 UserModel = get_user_model()
 
@@ -11,9 +11,16 @@ class UserCreationForm2(UserCreationForm):
         fields = ("username",)
 
 
+class UserChangeForm2(UserChangeForm):
+    class Meta:
+        model = UserModel
+        fields = "__all__"
+        field_classes = {"username": UsernameField}
+
+
 @admin.register(UserModel)
 class UserProfileAdmin(auth_admin.UserAdmin):
-    form = UserCreationForm2
+    form = UserChangeForm2
     add_form = UserCreationForm2
     list_display = (
         'username',
