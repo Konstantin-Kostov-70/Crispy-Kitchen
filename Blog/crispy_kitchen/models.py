@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-
 from Blog.crispy_blog.models import Post
 from cloudinary.models import CloudinaryField
 
@@ -20,7 +19,9 @@ class Reservation(models.Model):
 
     email = models.EmailField(max_length=254, )
 
-    phone = models.CharField(max_length=20, )
+    phone = models.CharField(
+        max_length=20,
+    )
 
     number_of_person = models.IntegerField()
 

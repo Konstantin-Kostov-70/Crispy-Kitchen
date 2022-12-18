@@ -24,6 +24,7 @@ class ReservationForm(forms.ModelForm):
 
             'phone': forms.TextInput(
                 attrs={
+                    'pattern': "[0-9]*",
                     'class': "form-control",
                     'placeholder': "123-456-7890",
                 }
