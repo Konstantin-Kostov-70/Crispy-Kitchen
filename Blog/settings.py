@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
@@ -11,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ug$ik0p)_q9q1*jp8=++av(c7=uyqxmxbq@6akxt28i+g=gd+$'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Blog_db',
-        'USER': 'postgres',
-        'PASSWORD': '1123QwER',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -131,9 +132,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = 'tmp/Blog/staticfiles'
 
 cloudinary.config(
-  cloud_name="dh7fk1gjf",
-  api_key="413624331237779",
-  api_secret="pdcbAyyfKSHrtM46z7elAJprDeU"
+  cloud_name=os.environ.get('CLOUD_NAME'),
+  api_key=os.environ.get('API_KEY'),
+  api_secret=os.environ.get('API_SECRET')
 )
 
 MEDIA_URL = '/media/'
