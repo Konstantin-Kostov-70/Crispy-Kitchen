@@ -84,7 +84,7 @@
                     <li class="nav-item">
                     <a href="{% url 'sign in' %}" class="nav-link">Sign in</a>
                 </li>
-                    <a href="{% url 'sign in' %}"><img src="/media/download_images/log-in.png" alt="img"></a>
+                    <a href="{% url 'sign in' %}"><img src="{% static 'images/log-in.png' %}" alt="img"></a>
                 {% else %}
 
                     <li class="nav-item">
@@ -95,7 +95,7 @@
                         <a href="{% url 'sign out' %}" class="nav-link">Sign Out</a>
                     </li>
 
-                    <a href="{% url 'sign out' %}"><img src="/media/download_images/logout.png" alt="img"></a>
+                    <a href="{% url 'sign out' %}"><img src="{% static 'images/logout.png' %}" alt="img"></a>
 
                     </ul>
                     </div>
