@@ -37,8 +37,8 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <a href="{% url 'profile edit' pk=request.user.pk%}"><img src="/media/download_images/Users-Edit-User-icon.png" alt="img"></a>
-                <a  style="position: relative; bottom: -3px; left: 15px" href="{% url 'profile delete' pk=request.user.pk %}"><img src="/media/download_images/delete-user.png" alt="img"></a>
+                <a href="{% url 'profile edit' pk=request.user.pk%}"><img src="{% static 'images/Users-Edit-User-icon.png' %}" alt="img"></a>
+                <a  style="position: relative; bottom: -3px; left: 15px" href="{% url 'profile delete' pk=request.user.pk %}"><img src="{% static 'images/delete-user.png' %}" alt="img"></a>
             </div>
         </div>
         <div class="row">
