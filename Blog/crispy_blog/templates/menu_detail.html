@@ -7,15 +7,16 @@
 {% block content %}
     <main>
         <h5 style="text-align: center; margin-top: 20px">Our Menu</h5>
-        <section class="contact section-padding">
+        <!-- <section class="contact section-padding">
             <div class="container">
                   {% if object.type_of_meal == 'Lunch' %}
                 <div class="col-lg-4 col-md-6 col-12">
                     <h2>{{ object.name_of_the_food }}</h2>
                     <img  src="{{ object.photo.url }}" alt="img">
                     <span style="position: relative; left: 230px; top: 20px" class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{ object.price|floatformat:2 }}</span>
+                   
                 </div>
-                <div style="position: relative; left: 750px; bottom: 490px; width: 370px;">
+                <div style="position: relative; left: 750px; bottom: 490px; width: 370px;">              
                     <p style="font-size: x-large">{{ object.description }}</p>
                 </div>
                       {% else %}
@@ -28,6 +29,24 @@
                     <p style="font-size: x-large">{{ object.description }}</p>
                 </div>
                    {% endif %}
+            </div>
+        </section> -->
+
+        <section class="contact section-padding">
+            <div class="container menu-detail">
+                <div class="col-lg-4 col-md-6 col-12 menu-detail-img-wraper">
+                    <h2>{{ object.name_of_the_food }}</h2>
+                    <img class="menu-detail-img" src="{{ object.photo.url }}" alt="img">
+                    <span class="price-tag bg-white shadow-lg  detail-menu-price">
+                        <small>$ {{ object.price|floatformat:2 }}</small>
+                    </span>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+                <div class="menu-detail-desc-wraper">
+                    <p class="menu-detail-desc">{{ object.description }}</p>
+                </div>
+                  
             </div>
         </section>
 
