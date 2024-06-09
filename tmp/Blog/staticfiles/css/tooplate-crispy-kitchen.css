@@ -876,9 +876,31 @@ strong {
   list-style: none;
 }
 
+#id_special_request {
+  width: 100%;
+}
+
+.submit-btn-wraper {
+  display: flex;
+  justify-content: center;
+  margin:10px 0 0 0 !important;
+  width: 100%;
+}
+
+.form-control.submit-btn {
+  width: 250px;
+  align-self: center;
+}
+
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
+@media screen and (min-width: 992px) and (max-width: 1200px){
+ .form-wrapper {
+  width: 80%;
+ }
+}
+
 @media screen and (max-width: 1180px) {
   h1 {
     font-size: 62px;

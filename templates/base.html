@@ -175,7 +175,7 @@
 
             <div class="modal-body d-flex flex-column justify-content-center">
                 <div class="booking">
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12 form-wrapper">
                         <form class="booking-form row" role="form" action="{% url 'reservation' %}" method="post">
                             {% csrf_token %}
                             <div class="col-lg-6 col-12">
@@ -218,8 +218,8 @@
 
                             </div>
 
-                            <div style="margin-top: 10px" class="col-lg-4 col-12 ms-auto">
-                                <button type="submit" class="form-control">Submit Request</button>
+                            <div style="margin-top: 10px" class="col-lg-4 col-12 ms-auto submit-btn-wraper">
+                                <button type="submit" class="form-control submit-btn">Submit Request</button>
                             </div>
                         </form>
 
