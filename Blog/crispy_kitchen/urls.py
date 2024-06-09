@@ -9,5 +9,5 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('reservation/', ReservationView.as_view(), name='reservation'),
     path('like/<int:food_id>/', like_food, name='like food'),
-
+   
 ]
