@@ -6,6 +6,10 @@ from Blog.core.utils import apply_likes_count, apply_user_liked_food
 from Blog.crispy_blog.models import Post
 from Blog.crispy_kitchen.forms import ReservationForm, MessageForm, NewsLetterForm
 from Blog.crispy_kitchen.models import Reservation, Message, SpecialMenu, Menu, FoodLike, NewsLetter
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+
+
 
 UserModel = get_user_model()
 
@@ -66,13 +70,17 @@ class ContactView(views.CreateView):
         return reverse_lazy('index')
 
 
-class ReservationView(views.CreateView):
+class ReservationView(SuccessMessageMixin,views.CreateView):
     model = Reservation
     form_class = ReservationForm
     template_name = 'reservation.html'
+    success_message = 'Your reservation has been successfully submitted'
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message
 
     def get_success_url(self):
-        return reverse_lazy('index')
+        return reverse_lazy('reservation')
 
 
 def get_user_liked_foods(food_id, request):
