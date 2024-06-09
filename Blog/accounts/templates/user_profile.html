@@ -36,23 +36,18 @@
 
                 </div>
             </div>
-            <div class="col-md-2">
-                <a href="{% url 'profile edit' pk=request.user.pk%}"><img src="{% static 'images/Users-Edit-User-icon.png' %}" alt="img"></a>
-                <a  style="position: relative; bottom: -3px; left: 15px" href="{% url 'profile delete' pk=request.user.pk %}"><img src="{% static 'images/delete-user.png' %}" alt="img"></a>
+            <div class="col-md-2 btn-container">
+                <a class="edit-delete-btn-wraper" href="{% url 'profile edit' pk=request.user.pk%}">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <span class="profile-edit-delete">Edit</span>
+                </a> 
+                <a class="edit-delete-btn-wraper" href="{% url 'profile delete' pk=request.user.pk %}">
+                    <i class="fa-solid fa-user-minus"></i>
+                    <span class="profile-edit-delete">Delete</span>
+                </a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-work">
-                    <p>MY FAVOURITE FOOD</p>
-                    {% for like in likes %}
-                        {% if object.pk == like.user.pk %}
-                    <a>{{ like.food.name_of_the_food }}</a><br/>
-                        {% endif %}
-                    {% endfor %}
-
-                </div>
-            </div>
+        <div class="row profile-info">
             <div class="col-md-8">
                 <div class="tab-content profile-tab" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

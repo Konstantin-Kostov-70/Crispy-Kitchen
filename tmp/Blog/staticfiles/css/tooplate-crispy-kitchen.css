@@ -875,6 +875,7 @@ strong {
 }
 
 /* Custom css */
+/* Simple menu-detail css */
 .menu-detail {
   margin: auto;
   width: 90%;
@@ -928,6 +929,23 @@ strong {
   .contact.section-padding {
     padding: 2.6rem 0;
   }
+  .profile-work {
+    padding: 0;
+  }
+  .btn-container {
+    margin: 15px 0;
+    justify-content: center;
+  }
+  .container.emp-profile {
+    padding: 12px 20px;
+  }
+  .profile-head {
+    margin-top: 15px;
+  }
+  .profile-head h5,
+  .profile-head h6 { 
+   text-align: center;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -948,3 +966,32 @@ strong {
   }
 }
 
+/*Edit Delete user buttons  */
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.fa-solid.fa-user-pen,
+.fa-solid.fa-user-minus {
+  color: #000000;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.profile-edit-delete {
+  color: #000;
+  font-weight: 600;
+}
+
+.edit-delete-btn-wraper {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+
+/* Profile info */
+.profile-info {
+  justify-content: end;
+}
