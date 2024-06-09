@@ -874,8 +874,16 @@ strong {
   }
 }
 
-/* Custom css */
-/* Simple menu-detail css */
+
+/* -------------------------
+   Simple menu-detail css 
+--------------------------*/
+
+.menu-heading {
+  text-align: center;
+  margin-top: 20px
+}
+
 .menu-detail {
   margin: auto;
   width: 90%;
@@ -946,6 +954,9 @@ strong {
   .profile-head h6 { 
    text-align: center;
   }
+  .text-size-2 {
+    font-size: 1.2 rem;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -966,7 +977,9 @@ strong {
   }
 }
 
-/*Edit Delete user buttons  */
+/*-------------------------
+  Edit Delete user buttons  
+-------------------------*/
 .btn-container {
   display: flex;
   flex-direction: row;
@@ -991,7 +1004,17 @@ strong {
   width: 50px;
 }
 
-/* Profile info */
+/*--------------------
+   Profile info 
+--------------------*/
 .profile-info {
   justify-content: end;
+}
+
+/* ---------------
+  Reservation
+--------------- */
+.text-size-2 {
+  margin-bottom: 20px;
+  font-weight: bolder;
 }
