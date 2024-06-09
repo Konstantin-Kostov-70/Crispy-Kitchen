@@ -1,5 +1,6 @@
 from django import forms
 from Blog.crispy_kitchen.models import Reservation, Message, FoodComment, NewsLetter
+import re
 
 
 class ReservationForm(forms.ModelForm):
@@ -9,6 +10,7 @@ class ReservationForm(forms.ModelForm):
         widgets = {
             'full_name': forms.TextInput(
                 attrs={
+                    'pattern' : "^[A-Za-z]+([ -][A-Za-z]+)*$",
                     'class': "form-control",
                     'placeholder': "Your Name",
                 },
@@ -51,7 +53,11 @@ class ReservationForm(forms.ModelForm):
                 }
             ),
         }
-
+    def clean_full_name(self):
+        full_name = self.cleaned_data.get('full_name')
+        if not re.match(r"^[A-Za-z]+(?:[ -][A-Za-z]+)*$", full_name):
+            raise forms.ValidationError("Full name can only contain letters, spaces, and hyphens.")
+        return full_name
 
 class MessageForm(forms.ModelForm):
     class Meta:
@@ -89,7 +95,7 @@ class MessageForm(forms.ModelForm):
                 }
             ),
         }
-
+   
 
 class FoodCommentForm(forms.ModelForm):
     class Meta:
