@@ -1008,6 +1008,17 @@ strong {
   }
 }
 
+@media screen and (max-width: 575px) {
+  .modal-dialog.modal-dialog-centered.modal-xl {
+    justify-content: center;
+    padding: 20px 0 20px 0;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .menu-detail {
     width: 90%;
