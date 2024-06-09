@@ -19,6 +19,14 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#BookingModal">Book Here
                         </button>
+                      
+                        {% if messages %}
+                        <ul class="success-msg">
+                            {% for message in messages %}
+                                <li>{{ message }} !</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>
