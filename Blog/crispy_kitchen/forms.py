@@ -10,7 +10,7 @@ class ReservationForm(forms.ModelForm):
         widgets = {
             'full_name': forms.TextInput(
                 attrs={
-                    'pattern' : "^[A-Za-z]+([ -][A-Za-z]+)*$",
+                    'pattern' : "(^[A-Za-z]{2,16})([ ]{0,1})([A-Za-z]{2,16})",
                     'class': "form-control",
                     'placeholder': "Your Name",
                 },
@@ -26,9 +26,9 @@ class ReservationForm(forms.ModelForm):
 
             'phone': forms.TextInput(
                 attrs={
-                    'pattern': "[0-9]*",
+                    'pattern': "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$",
                     'class': "form-control",
-                    'placeholder': "123-456-7890",
+                    'placeholder': "+(123) - 456-78-90",
                 }
             ),
 
@@ -55,7 +55,7 @@ class ReservationForm(forms.ModelForm):
         }
     def clean_full_name(self):
         full_name = self.cleaned_data.get('full_name')
-        if not re.match(r"^[A-Za-z]+(?:[ -][A-Za-z]+)*$", full_name):
+        if not re.match(r"(^[A-Za-z]{2,16})([ ]{0,1})([A-Za-z]{2,16})", full_name):
             raise forms.ValidationError("Full name can only contain letters, spaces, and hyphens.")
         return full_name
 
@@ -67,6 +67,7 @@ class MessageForm(forms.ModelForm):
         widgets = {
             'full_name': forms.TextInput(
                 attrs={
+                    'pattern' : "(^[A-Za-z]{2,16})([ ]{0,1})([A-Za-z]{2,16})",
                     'class': 'form-control',
                     'placeholder': 'Your Name',
                 }
@@ -74,7 +75,7 @@ class MessageForm(forms.ModelForm):
 
             'email': forms.EmailInput(
                 attrs={
-
+                    'pattern': "[^ @]*@[^ @]*",
                     'class': "form-control",
                     'placeholder': "your@email.com"
                 }
@@ -82,8 +83,9 @@ class MessageForm(forms.ModelForm):
 
             'phone': forms.TextInput(
                 attrs={
+                    'pattern': "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$",
                     'class': "form-control",
-                    'placeholder': "123-456-7890",
+                    'placeholder': "+(123) - 456-78-90",
                 }
             ),
 
@@ -118,6 +120,7 @@ class NewsLetterForm(forms.ModelForm):
         widgets = {
             'email': forms.EmailInput(
                 attrs={
+                    'pattern': "[^ @]*@[^ @]*",
                     'placeholder': 'Your email address',
                     'class': 'form-control'
                 }
