@@ -49,8 +49,8 @@ After cloning the repository, you will need to install the necessary Python depe
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Konstantin-Kostov-70/Jobify.git
-cd Jobify
+git clone https://github.com/Konstantin-Kostov-70/Crispy-Kitchen.git
+cd Crispy-Kitchen
 ```
 ### 2. Install Python dependencies:
 
