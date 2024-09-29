@@ -34,6 +34,16 @@ The homepage showcases a selection of **special menus** and **best offers**. It 
 #### 6. Admin Section
 - The site admin is accessible through a custom URL path (`/koss/`), with a honeypot feature protecting the default `/admin` route for enhanced security.
 
+- To access the Django admin interface, navigate to the `/koss/` path on your local server, for example:
+
+ - http://127.0.0.1:8000/koss/
+
+
+## Security
+The website implements several security features:
+
+- **Django Honeypot**: Protects the default admin URL from potential attacks by redirecting `/admin/` to a honeypot.
+
 ---
 
 ### Setup Instructions
@@ -74,16 +84,7 @@ To start the server and view the website locally, use the following command:
 python manage.py runserver
 ```
 
-### 5. Admin Access:
-
-To access the Django admin interface, navigate to the `/blog/` path on your local server, for example:
-
-http://127.0.0.1:8000/blog/
-
-css
-Copy code
-
-Make sure to create a superuser if you haven't already, by running:
+### 5. Make sure to create a superuser if you haven't already, by running:
 
 ```bash
 python manage.py createsuperuser
