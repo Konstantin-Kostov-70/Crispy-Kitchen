@@ -32,11 +32,11 @@ The homepage showcases a selection of **special menus** and **best offers**. It 
 - Users can leave messages for the restaurant using the **contact form**.
 
 #### 6. Admin Section
-- The site admin is accessible through a custom URL path (`/koss/`), with a honeypot feature protecting the default `/admin` route for enhanced security.
+- The site admin is accessible through a custom URL path (`/my-admin/`), with a honeypot feature protecting the default `/admin` route for enhanced security.
 
-- To access the Django admin interface, navigate to the `/koss/` path on your local server, for example:
+- To access the Django admin interface, navigate to the `/my-admin/` path on your local server, for example:
 
- - http://127.0.0.1:8000/koss/
+ - http://127.0.0.1:8000/my-admin/
 
 
 ## Security
