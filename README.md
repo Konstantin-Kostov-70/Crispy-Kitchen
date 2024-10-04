@@ -1,4 +1,5 @@
 ## Crispy-Kitchen
+![crispy](https://github.com/user-attachments/assets/0f180524-5484-41f2-9e4a-8786e64a496e)
 
 ### Overview
 Crispy Kitchen is a dynamic website built using Django, designed for a restaurant business. The website serves as both a promotional platform and a content hub, featuring menus, special offers, blog posts about food, and customer interactions like reservations and comments. The project is structured into two main Django applications:
